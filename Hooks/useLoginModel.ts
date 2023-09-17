@@ -1,17 +1,16 @@
-import { useCallback } from "react";
+// useLoginModel.ts
 import { create } from "zustand";
 
 interface LoginModelsProps {
-    isOpen : boolean ,
-    onClose : () => void ,
-    onOpen : () => void
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
 }
 
-// create custom hook
-const useLoginModel = create<LoginModelsProps>((set) =>({
-    isOpen : true ,
-    onClose : () => set({isOpen : true}) ,
-    onOpen : () => set({isOpen : false})
+const useLoginModel = create<LoginModelsProps>((set) => ({
+  isOpen: false,
+  onOpen: () => set({ isOpen: true }),
+  onClose: () => set({ isOpen: false }),
+}));
 
-}))
-export default useLoginModel
+export default useLoginModel;

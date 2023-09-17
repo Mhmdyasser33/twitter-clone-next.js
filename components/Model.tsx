@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Button from "./Button";
 
-interface ModelProps {
+interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
   onSubmit: () => void;
@@ -13,7 +13,7 @@ interface ModelProps {
   disabled?: boolean;
 }
 
-const Model = ({ isOpen, onClose, onSubmit, title, body, actionLabel, footer, disabled } :ModelProps) => {
+const Model = ({ isOpen, onClose, onSubmit, title, body, actionLabel, footer, disabled } : ModalProps) => {
   const handleClose = useCallback(() => {
     if (disabled) {
       return;
@@ -30,7 +30,9 @@ const Model = ({ isOpen, onClose, onSubmit, title, body, actionLabel, footer, di
     onSubmit();
   }, [onSubmit, disabled]);
 
-  {!isOpen && null} ;
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <>

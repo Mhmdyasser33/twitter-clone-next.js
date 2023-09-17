@@ -1,9 +1,11 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import FollowerBar from './FollowerBar';
-
-
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import LoginModal from '@/Models/LoginModel';
+interface LayoutProps {
+  children : React.ReactNode
+}
+const Layout = ({ children } : LayoutProps) => {
   return (
     <div className="h-screen bg-black">
       <div className="container h-full mx-auto xl:px-30 max-w-6xl">

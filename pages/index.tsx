@@ -1,3 +1,4 @@
+import LoginModal from "@/Models/LoginModel";
 import Header from "@/components/Header";
 
 export default function Home() {
