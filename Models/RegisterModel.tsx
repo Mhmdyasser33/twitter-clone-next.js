@@ -1,5 +1,5 @@
 
-import { useCallback, useState } from "react";
+import { useCallback, useState , useEffect } from "react";
 import Input from "@/components/Input";
 import Model from "@/components/Model";
 import useRegisterModel from "@/Hooks/useRegisterModel";
@@ -16,6 +16,15 @@ const RegisterModel = () => {
   const [username , setUserName] = useState('') ;
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  // ! after click register make an input with empty...
+  useEffect(() =>{
+    if (isLoading) {
+      setName('');
+      setEmail('');
+      setPassword('');
+      setUserName('');
+    }
+},[isLoading])
 
   const handleToggle = useCallback(() =>{
         if(isLoading) {
@@ -34,13 +43,17 @@ const RegisterModel = () => {
        username ,
        name ,
       })
+      setName('') ;
+    setEmail('') ;
+    setPassword('') ;
+    setUserName('') ;
 
     toast.success("account Created") ;
     signIn('credentials' , {
       email ,
       password
     })
-      registerModels.onClose();
+    registerModels.onClose();
     } catch (error) {
    toast.error("Something went wrong") ;
     } finally {
