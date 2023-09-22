@@ -11,7 +11,7 @@ interface SideBarItemsProps {
     auth ?: boolean
 }
 const SideBarItems = ({label , icon : Icon , href , onClick , auth } : SideBarItemsProps) => {
-  const loginModel = useLoginModel() ;
+   const loginModel  = useLoginModel() ;
    const router = useRouter() ;
    const {data : currentUser} = useCurrentUser() ;
   const handleClick = useCallback(() =>{

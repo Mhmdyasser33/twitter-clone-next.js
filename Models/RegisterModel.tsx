@@ -17,7 +17,9 @@
     const [username , setUserName] = useState('') ;
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
     // ! after click register make an input with empty...
+
     useEffect(() =>{
      if(isLoading) return ;
       setEmail('') ;
@@ -47,7 +49,6 @@
       setEmail('') ;
       setPassword('') ;
       setUserName('') ;
-
       toast.success("account Created") ;
       signIn('credentials' , {
         email ,

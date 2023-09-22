@@ -17,7 +17,6 @@ import { signIn } from "next-auth/react";
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-
     const handleToggle = useCallback(() =>{
       // function that will be memoized
       if(isLoading) return ;

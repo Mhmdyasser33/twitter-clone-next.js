@@ -13,7 +13,7 @@ const Header = ({label , showBackArrow} : HeaderProps) => {
         router.back() ;
     } ,[router])
   return (
-    <div className='border-b-[1px] border-neutral-800 p-4'>
+    <div className='border-b-[1px] border-neutral-800 p-1'>
     <div className='flex flex-row items-center gap-2'>
       {/* check if showBack True ? show the icon */}
       {showBackArrow && (
